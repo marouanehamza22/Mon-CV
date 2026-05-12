@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - MAROUANE HAMZA</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="profile-section">
+            <img src="image/profile.jpeg" alt="Profile" class="profile-img"/>
+            <h1>MAROUANE<br><span>HAMZA</span></h1>
+            <h3>Étudiant en Informatique</h3>
+        </div>
+
+        <div class="contact">
+            <h2>CONTACT</h2>
+            <p>
+                <i class="fas fa-envelope"></i> 
+                <a href="mailto:marouanehmz.22@gmail.com">marouanehmz.22@gmail.com</a>
+            </p>
+            <p>
+                <i class="fa-brands fa-github"></i> 
+                <a href="https://github.com/marouanehamza22" target="_blank">github.com/marouanehamza22</a>
+            </p>
+            <p>
+                <i class="fa-brands fa-linkedin"></i> 
+                <a href="https://www.linkedin.com/in/marouane-hamza-a8691940a" target="_blank">linkedin.com/in/marouane-hamza</a>
+            </p>
+        </div>
+
+        <div class="Compétences">
+            <h2>Compétences</h2>
+            <div class="Compétences">
+                <span>HTML</span>
+                <div class="progress">
+                    <div class="progress-bar" data-width="90%"></div>
+                </div>
+            </div>
+
+            <div class="Compétences">
+                <span>CSS</span>
+                <div class="progress">
+                    <div class="progress-bar" data-width="85%"></div>
+                </div>
+            </div>
+
+            <div class="Compétences">
+                <span>JavaScript</span>
+                <div class="progress">
+                    <div class="progress-bar" data-width="75%"></div>
+                </div>
+            </div>
+
+            <div class="Compétences">
+                <span>Python</span>
+                <div class="progress">
+                    <div class="progress-bar" data-width="77%"></div>
+                </div>
+            </div>
+
+            <div class="Compétences">
+                <span>C++</span>
+                <div class="progress">
+                    <div class="progress-bar" data-width="80%"></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="section">
+            <h2 class="section-title">À PROPOS</h2>
+            <p>
+             Actuellement en deuxième année de Licence Informatique à la Faculté des Sciences Semlalia,
+             je suis un véritable passionné de programmation. Pour moi, le code est un outil de construction ;
+             c’est pourquoi je m’intéresse aussi bien à la rigueur du C++ qu’à la flexibilité du JavaScript 
+             pour bâtir des solutions logicielles solides. Curieux et déterminé, j’aime comprendre comment les systèmes 
+             fonctionnent sous le capot pour mieux les optimiser. Mon ambition est d'intégrer des équipes de haut niveau 
+             sur des projets complexes et stimulants. Je souhaite ainsi confronter mes connaissances à la réalité du terrain,
+             développer mes compétences techniques et contribuer à la création de projets innovants et performants.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">FORMATION</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">2ème Année Licence Informatique (L2)</div>
+                    <div class="accordion-content">
+                        <strong>Faculté des Sciences Semlalia</strong> — 2025 - 2026 <br>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">1ère Année Licence Informatique (L1)</div>
+                    <div class="accordion-content">
+                        <strong>Faculté des Sciences Semlalia</strong> — 2024 - 2025 <br>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Baccalauréat Scientifique</div>
+                    <div class="accordion-content">
+                        <strong>Lycée Qualifiant Bir Anzarane</strong> — 2024 <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">PROJETS</h2>
+            <div id="projects-root"></div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">CONTACT</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Votre nom">
+                <input type="email" id="email" placeholder="Votre email">
+                <textarea id="message" placeholder="Votre message"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+            <p id="formMessage"></p>
+        </section>
+    </main>
+
+</div>
+
+<script type="text/babel">
+    const projects = [
+        {
+            title: "Site Web - Stellar Journey",
+            description: "Conception, Création et Développement d'une plateforme immersive dédiée à l'astronomie. Exploration interactive du système solaire, des phénomènes cosmiques et des grands scientifiques qui ont marqué l'histoire de l'espace.",
+            technologies: "HTML, CSS, JavaScript, ReactJS",
+            link: "https://marouanehamza22.github.io/SiteWeb-Stellar-Journey/"
+        },
+        {
+            title: "Projet Outbreak 2D",
+            description: "Conception, Création et Développement d'un jeu de survie 2D. Le joueur incarne un héros qui doit affronter des hordes de zombies et de corbeaux pour atteindre un refuge sécurisé. Le succès permet d'augmenter son score et de gagner le niveau.",
+            technologies: "C++, SFML",
+            link: "https://github.com/marouanehamza22/Zombies-Game-2D"
+        }
+    ];
+
+    function ProjectBadge(props) {
+        return (
+            <span style={{ backgroundColor: '#ff9d00', color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '13px', marginLeft: '5px' }}>
+                {props.tech}
+            </span>
+        );
+    }
+
+    function ProjectButton(props) {
+        return (
+            <a href={props.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '15px', color: '#ff9d00', fontWeight: 'bold', textDecoration: 'none' }}>
+                Voir Projet ➔
+            </a>
+        );
+    }
+
+    function ProjectCard(props) {
+        return (
+            <div className="project-card">
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+                <div style={{ marginTop: '10px' }}>
+                    <strong>Technologies :</strong> 
+                    <ProjectBadge tech={props.technologies} />
+                </div>
+                <ProjectButton url={props.link} />
+            </div>
+        );
+    }
+
+    function ProjectsApp() {
+        return (
+            <div>
+                {projects.map((proj, index) => (
+                    <ProjectCard 
+                        key={index} 
+                        title={proj.title} 
+                        description={proj.description} 
+                        technologies={proj.technologies} 
+                        link={proj.link} 
+                    />
+                ))}
+            </div>
+        );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('projects-root'));
+    root.render(<ProjectsApp />);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
